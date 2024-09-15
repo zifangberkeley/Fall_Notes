@@ -46,3 +46,28 @@ deque return a new deque object initilaized left to right using append() with da
 - deques are generalization of stacks and queues that supprots thread-safe and memory efficient appends and pops with ~O(1) performance in either direction.
 - they support similar operations and are optmized for fast fixed-length operations and incur O(n) memory movement costs for pop(0) and insert (0,v)
 
+recursion is a technique where the function calls itself repeatly.
+Every recursion function case has two parts. a recursive case and a base case.
+a recursive case is the condition under which the function calls itself
+a base case is the condition under which the function doesn't call itself again.
+### Three laws:
+1. a recursive algo must have a base
+2. a recursive algo changes its state and move toward base case
+3. a recursive algo must call itself recursively.
+We can prove recursive programs via induction
+- to prove a statement involving N, assuming that the statement is true for all positive integers less than N, use that fact to prove it for N.
+Or we can prove it through GCD. where we find the most common denominator.
+there's no convergence guaranteed. it might never stop.
+
+it could be ineffient and have overlapping subproblems that are solved repeatedly.
+recursion tree: one node for each recursive call. label node with return value after children are labelled. 
+Exponentail waste
+- number of recursive calls grows exponentially
+- overlapping subproblems are repeatidly calculated wasting memory. 
+Memoization: keep a record of the results for the given inputs
+- before computing the result for a given input, check if we already have it
+- ensures that a function doesn't run for the same input more than once.
+instead of recursive solutions we can use iterative solutions. 
+
+# sorting problem
+Sorting: placing elements from a collection in some kind of order.
