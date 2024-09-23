@@ -68,7 +68,7 @@ While constant b is determined by `system independent` effects such as the algo 
 In the worst case, linked lists are o(N) for read operations.
     - for a linked list, if we want to get to the last item, we can't just read it. we have to go through all the other items to get the pointer for the last item. terrible if you have to jump around randomly.
 
-#### Trade=offs
+#### Trade-offs
     Arrays: we know the address for every item in our array
 
     Reading run time:
@@ -108,8 +108,21 @@ Doubly linked elist.
     the common 3-Sum problem. what three numbers in N disctinc integers sum exactly zero.
         - the indicies have to be unique indexes.
         - given a collection of molecular fragments and a target molecular weights. How many combinations sum up to the molecular weights.
-    or we can do something liek a combination that will equal to x binding affinity.
-        
+    or we can do something like a combination that will equal to x binding affinity.
+    The bruteforce solution is to check all combinations with constant space complexity. which we ccan use itertools to compute, the end combo is added to the results.
+
+    A more intelligent solution is go through binary search.
+        - sort freatgments by weight(once at the beginning) -> O(NlogN)
+        - for each pair of fragments(i,j), calculate their combined weight -> O(N^2)
+        Then use binary search to find the third fragment that when added to the pair is close to the target eight -> O(logN)
+
+        Bisect conducts binary search operations.
+        - given a sorted array and a key, find the index of the key inside the array.
+        The first iteration has two definitions, low = lowest index. high = highest index and compute the mid. Then compare, how does the middle index look compared to our search index. (33 must be on the left half of the list).
+        high is then moved to mid - 1.
+        we compare, then we see that 33 is larger then 25. the remaining part of where we need to search for is between mid and hi.
+        we do lo + 1 . in the last iteration, lo, mid and hi will be equal to the target. 
+        It took 4 iterations. This is a logN search. 
 drug modeling. maintaining drug efficiency while maintaining low toxicity. 
 Hybrid models combining attention-based and state pace based.
 
