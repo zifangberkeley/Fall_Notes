@@ -123,6 +123,12 @@ Doubly linked elist.
         we compare, then we see that 33 is larger then 25. the remaining part of where we need to search for is between mid and hi.
         we do lo + 1 . in the last iteration, lo, mid and hi will be equal to the target. 
         It took 4 iterations. This is a logN search. 
+    Sorting is a fundamental operation that we will continue studying. How do we know that the algos are at their run times. 
+
+### Selection sort
+- the idea is : in interation i, find the index min of smallest remaining entry within list a, swap [i] and [min]
+
+
 drug modeling. maintaining drug efficiency while maintaining low toxicity. 
 Hybrid models combining attention-based and state pace based.
 
