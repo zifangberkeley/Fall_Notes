@@ -113,4 +113,34 @@ Selection sort
 Insertion sort
 in iteration i, swap a[i] with each larger entry to its left.
 worst case is 1/2(N^2). how does it operate paartially sorted arrays.
-- for partially sorted arrays, insertion sort runs in linear time. for example, merging the list. 
+- for partially sorted arrays, insertion sort runs in linear time. for example, merging the list.
+    - the number of exchanges equal to the number of inversions. (N-1)
+shuffle sort
+-   randomly generate uniformly random permutation of the input array. problem is that when there will be the same values, it'll cause problems.
+
+Mergesort:
+-   There are many sorting algos, They are mostly from O(N^2). how do we achieve NlogN sorting?
+it's a divide and conquer algo. break up problems, solve it each individually, then merge two halves into sorted whole.
+    we assume top down sort will work, whatever we have at the end will be an sorted left half and a sorted right half. then we merge the two arrays. good algos can be better than super computers.
+
+Why does it have a run time of Nlogbase2N in the worst case.
+    Basically, the run time is dependent on the number of split arrays. so it will depend on a run time of Nlog2N. In terms of memory, mergesort uses extra space proportional to N.
+
+For tiny subarrays, we should just use insertion sorts(<=10items)
+This eliminates the copy to the aux arrays which will save time.
+stop if already sorted will help for partially ordered arrays. 
+
+Variant:
+-   pass through array, merging subarrays of size 1.
+repeat for subarrays 2,4,8,16. This can be implemented in a non-recursive version. Less memory wasste. but it's slower than merge sort by around 10%.
+
+Sorting Complexity and Stability:
+-   develope framework to solve a particular problem x.
+difficult to choose when we have all these options
+-   model of computation: allowable operations
+- cost model. operation counts
+- upperbound: best cost guaranteed for this problem.
+- lowerbound: any cost that can be achieved by any algo. 
+
+We have to use theory as guides to choose what algos to use. 
+Selection sort is not stable, long distance exhanges can move an item past some equal item. `
